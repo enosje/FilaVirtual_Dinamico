@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 
 	<form action="efetuaLogin" method="post">
-		<img src="resources/imagens/java.png" >
-		<table align="right" >
+		<img src="resources/imagens/java.png">
+		<table align="right">
 			<tr>
 				<td>Usuário:</td>
 				<td><input type="text" name="usuario" /></td>
@@ -30,7 +30,8 @@
 					<h6>
 						<font color="red"><a
 							href="http://localhost:8080/filavirtual/">Esqueceu a senha?</a></font> <font
-							color="red"><a href="http://localhost:8080/filavirtual/">Cadastrar</a></font>
+							color="red"><a
+							href="http://localhost:8080/ProjetoFilaVirtual_/cadastro.jsp">Cadastrar</a></font>
 					</h6>
 				</td>
 				<td></td>
@@ -43,7 +44,7 @@
 	<br />
 	<br />
 
-	
+
 	<hr>
 </body>
 </html>

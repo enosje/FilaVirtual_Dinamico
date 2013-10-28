@@ -1,6 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:import url="/views/cabecalho.jsp" />
-<h1 align="center">Teste</h1>
-<c:import url="/views/rodape.jsp"/>
+	<h1 align="center">Usuário Cadastrado com Sucesso!</h1>
+	<br />
+	<h2 align="center">
+		<a href="http://localhost:8080/ProjetoFilaVirtual_/views/index.jsp">--
+			voltar --</a>
+	</h2>
 </body>
 </html>
