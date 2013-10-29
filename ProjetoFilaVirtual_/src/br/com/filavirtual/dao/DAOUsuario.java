@@ -2,7 +2,9 @@ package br.com.filavirtual.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.filavirtual.entidades.Usuario;
@@ -33,14 +35,13 @@ public class DAOUsuario implements DAOBase<Usuario> {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e);
-//		} 
-//			finally {
-//			try {
-//				con.close();
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 	}
@@ -60,7 +61,29 @@ public class DAOUsuario implements DAOBase<Usuario> {
 	@Override
 	public List<Usuario> lista() {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from Usuario";
+		List<Usuario> lista = new ArrayList<Usuario>();
+		PreparedStatement stm;
+		try {
+			stm = con.prepareStatement(sql);
+			ResultSet rs = stm.executeQuery();
+			
+			while(rs.next()){
+				Usuario u = new Usuario();
+				u.setNome(rs.getString("nomeUsuario"));
+				u.setSenha(rs.getString("senhaUsuario"));
+				
+				lista.add(u);
+			}
+			
+			rs.close();
+			stm.close();
+			return lista;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			throw new RuntimeException(e); 
+		}
 	}
 
 	@Override

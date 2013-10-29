@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 align="center">Usuário Cadastrado com Sucesso!</h1>
-	<br />
-	<h2 align="center">
-		<a href="http://localhost:8080/ProjetoFilaVirtual_/index.jsp">--
-			voltar --</a>
-	</h2>
+Usuario Logado
 </body>
 </html>
