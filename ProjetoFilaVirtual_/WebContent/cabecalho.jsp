@@ -29,7 +29,7 @@
 				<td align="right">
 					<h6>
 						<font color="red"><a
-							href="http://localhost:8080/filavirtual/">Esqueceu a senha?</a></font> <font
+							href="http://localhost:8080/ProjetoFilaVirtual_/index.jsp">Esqueceu a senha?</a></font> <font
 							color="red"><a
 							href="http://localhost:8080/ProjetoFilaVirtual_/cadastro.jsp">Cadastrar</a></font>
 					</h6>
