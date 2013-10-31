@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.filavirtual.dao.DAOUsuario;
 import br.com.filavirtual.entidades.Usuario;
@@ -39,10 +40,16 @@ public class AutenticaUsuario extends HttpServlet {
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		
+		Usuario user = new Usuario();
+		user.setNome(usuario);
+		user.setSenha(senha);
+		
 		RequestDispatcher rd; 
 		
-		if (new AutenticaUsuarioService().autenticarUsuario(usuario, senha)) {
-			request.setAttribute("usuarioLogado", usuario);
+		if (new AutenticaUsuarioService().autenticarUsuario(user.getNome(), user.getSenha())) {
+			HttpSession session = request.getSession();
+			session.setAttribute("usuario", user);
+			request.setAttribute("usuarioLogado", session.getAttribute("usuario"));
 			rd = request.getRequestDispatcher("home.jsp");
 			rd.forward(request, response);
 		}else{

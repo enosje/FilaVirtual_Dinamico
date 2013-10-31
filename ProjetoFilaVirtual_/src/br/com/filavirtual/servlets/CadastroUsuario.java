@@ -46,7 +46,7 @@ public class CadastroUsuario extends HttpServlet {
 		dao.adicionar(usuario);
 
 		RequestDispatcher rd = request
-				.getRequestDispatcher("usuarioCadastradoComSucesso.jsp");
+				.getRequestDispatcher("efetuaLogin");
 		rd.forward(request, response);
 
 	}

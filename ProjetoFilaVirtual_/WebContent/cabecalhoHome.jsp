@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 align="center">Bem Vindo ${usuarioLogado }</h2>
+	<h2 align="center">Bem Vindo ${usuarioLogado.nome }</h2>
 
 	<table align="center">
 		<tr>
@@ -22,9 +22,9 @@
 				</h4></td>
 		</tr>
 		<tr>
-			<td align="center"><a
-				href="http://localhost:8080/ProjetoFilaVirtual_/index.jsp">sair</a>
-			</td>
+			<td align="center"><form action="logout" method="post">
+					<input type="submit" value="Sair">
+				</form></td>
 		</tr>
 	</table>
 

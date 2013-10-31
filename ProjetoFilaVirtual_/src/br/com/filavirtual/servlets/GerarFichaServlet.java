@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.filavirtual.service.FabricaSenhaImpl;
 
@@ -32,13 +33,19 @@ public class GerarFichaServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		
+		if(request.getSession().isNew()){
+			response.sendRedirect("index.jsp");
+		}else{
+			
 		FabricaSenhaImpl senha = new FabricaSenhaImpl();
-
+		
+		request.setAttribute("usuarioLogado", request.getSession().getAttribute("usuario"));
 		request.setAttribute("senha", senha.gerarSenha());
 
 		RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 		rd.forward(request, response);
+		}
 	}
 
 }
