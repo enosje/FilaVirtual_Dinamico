@@ -6,10 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Novo Cadastro</title>
 </head>
-<body>
+<body bgcolor="#BDB76B">
 <h1 align="center">Cadastro Usuário</h1>
 	<form action="cadastrarUsuario" method="post">
-		<table align="center">
+		<table align="center" bgcolor="#EEE8AA">
 			<tr>
 				<td>Nome</td>
 				<td><input type="text" name="nome" /></td>

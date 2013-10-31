@@ -39,11 +39,15 @@ public class AutenticaUsuario extends HttpServlet {
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		
+		RequestDispatcher rd; 
 		
 		if (new AutenticaUsuarioService().autenticarUsuario(usuario, senha)) {
-			response.sendRedirect("logado.jsp");
+			request.setAttribute("usuarioLogado", usuario);
+			rd = request.getRequestDispatcher("home.jsp");
+			rd.forward(request, response);
 		}else{
-			response.sendRedirect("index.jsp");
+			rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
 		}
 	}
 
