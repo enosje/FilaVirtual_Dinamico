@@ -31,7 +31,7 @@
 						<font color="red"><a
 							href="http://localhost:8080/ProjetoFilaVirtual_/index.jsp">Esqueceu a senha?</a></font> <font
 							color="red"><a
-							href="http://localhost:8080/ProjetoFilaVirtual_/cadastro.jsp">Cadastrar</a></font>
+							href="http://localhost:8080/ProjetoFilaVirtual_/faces/cadastro.xhtml">Cadastrar</a></font>
 					</h6>
 				</td>
 				<td></td>
