@@ -40,7 +40,9 @@ public class ServletMail extends HttpServlet {
 		final String username = "fila.virtual.mail@gmail.com";
 		final String password = "@filavirtual#";
 		final String para = (String) request.getAttribute("email");
-		final String conteudoDoEmail = "Olá, \nseja Bem-Vindo!";
+		final String nomeUsuario = (String) request.getAttribute("nome");
+		final String sobrenomeUsuario = (String) request.getAttribute("sobrenome");
+		final String conteudoDoEmail = "Olá "+nomeUsuario+" "+sobrenomeUsuario+"\n seja Bem-Vindo ao Fila Virtual!";
 		final String assuntoEmail = "Novo Cadastro";
 
 		Properties props = new Properties();
@@ -73,7 +75,8 @@ public class ServletMail extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("cadastrado");
+		rd.forward(request, response);
 		
 	}
 }

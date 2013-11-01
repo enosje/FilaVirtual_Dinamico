@@ -36,8 +36,10 @@ public class CadastroUsuario extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String nome = request.getParameter("nome");
-		String senha = request.getParameter("senha");
+		String sobrenome = request.getParameter("sobrenome");
 		String email = request.getParameter("email");
+		String senha = request.getParameter("senha");
+		
 
 		Usuario usuario = new Usuario();
 		usuario.setNome(nome);
@@ -47,6 +49,8 @@ public class CadastroUsuario extends HttpServlet {
 		dao.adicionar(usuario);
 		
 		request.setAttribute("email", email);
+		request.setAttribute("nome", nome);
+		request.setAttribute("sobrenome", sobrenome);
 		RequestDispatcher rd = request
 				.getRequestDispatcher("enviarEmailCadastro");
 		rd.forward(request, response);
