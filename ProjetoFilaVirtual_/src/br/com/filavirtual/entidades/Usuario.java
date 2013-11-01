@@ -5,6 +5,17 @@ public class Usuario {
 	private long id;
 	private String nome;
 	private String senha;
+	private String email;
+
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public long getId() {
 		return id;

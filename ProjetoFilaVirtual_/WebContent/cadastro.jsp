@@ -21,6 +21,10 @@
 				<td><input type="password" name="senha" /></td>
 			</tr>
 			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email" /></td>
+			</tr>
+			<tr>
 				<td></td>
 				<td><input type="submit" value="Cadastrar" />
 				</td>

@@ -37,6 +37,7 @@ public class CadastroUsuario extends HttpServlet {
 
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
+		String email = request.getParameter("email");
 
 		Usuario usuario = new Usuario();
 		usuario.setNome(nome);
@@ -44,9 +45,10 @@ public class CadastroUsuario extends HttpServlet {
 
 		DAOUsuario dao = new DAOUsuario();
 		dao.adicionar(usuario);
-
+		
+		request.setAttribute("email", email);
 		RequestDispatcher rd = request
-				.getRequestDispatcher("efetuaLogin");
+				.getRequestDispatcher("enviarEmailCadastro");
 		rd.forward(request, response);
 
 	}
